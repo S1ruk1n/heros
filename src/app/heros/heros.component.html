@@ -1,0 +1,10 @@
+<p>heros works!</p>
+<p>das ist mein Held-Objekt</p>
+<p>{{held | json}}</p>
+<h1>{{held.name | uppercase}}</h1>
+<h2>Superkraft: {{held.superpower}}</h2>
+<div>
+    <label for="name">Hero name: </label>
+    <input id="name" [(ngModel)]="held.name" placeholder="name">
+</div>
+

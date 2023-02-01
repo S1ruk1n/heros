@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'heros';
-}
+  title = 'Heros !!';
+  name = "Sarukan";
+  summe = function():number{return 3+4}
+  getSomeText = getName("Hier ist irgend ein Text")
+ }
+ function getName(myname:string):string{return myname}
+
