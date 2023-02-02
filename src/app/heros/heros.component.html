@@ -1,10 +1,40 @@
-<p>heros works!</p>
-<p>das ist mein Held-Objekt</p>
-<p>{{held | json}}</p>
-<h1>{{held.name | uppercase}}</h1>
-<h2>Superkraft: {{held.superpower}}</h2>
-<div>
-    <label for="name">Hero name: </label>
-    <input id="name" [(ngModel)]="held.name" placeholder="name">
-</div>
+<h1><b>UNSERE HELDEN</b> </h1>
+<h2>Das ist die Galerie der Helden</h2>
+<!--p>{{held | json}}</p>
+<h1>{{held.name | uppercase}}</h1-->
+<!--<h2>Superkraft: {{held.superpower}}</h2>-->
+<!--div>
+    <label for="name">Meine Helden :<label>
+        <input id="name" [(ngModel)] ="held.name" placeholder="name">
+    </div-->
 
+
+<ul class="held">
+    <li *ngFor="let held of helden">
+        <h2> {{ held.name | uppercase}}</h2>
+        <!--p>{{held.id}}</p>
+        <p> Superkraft : {{held.superpower}}</p-->
+      <!--button [class.selected]="held === selectedHeld" type="button" (click)="onSelect(held)"-->
+        <!--span class="badge">{{hero.id}}</span>-->
+        <a routerLink="/detail/{held.id}}">
+        <span class="badge">{{held.id}</span> {{held.name}}
+        </a>
+    </li>
+  </ul>
+
+
+  <techstarter-hero-detail [held]="selectedHeld"></techstarter-hero-detail>
+
+
+  <!--div *ngIf="selectedHeld">
+    <h2>{{selectedHeld.name | uppercase}} Details</h2>
+    <div>id: {{selectedHeld.id}}</div>
+    <div>
+      <label for="held-name">Hero name: </label>
+      <input id="held-name" [(ngModel)]="selectedHeld.name" placeholder="name">
+    </div>
+  </div-->
+
+
+
+  

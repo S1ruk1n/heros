@@ -1,0 +1,12 @@
+<p>hero-detail works!</p>
+
+<div *ngIf="held">
+
+    <h2>{{held.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{held.id}}</div>
+    <div>
+      <label for="held-name">Held name: </label>
+      <input id="held-name" [(ngModel)]="held.name" placeholder="name">
+    </div>
+  
+  </div>

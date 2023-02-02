@@ -1,8 +1,14 @@
-<h1>hallo Angular</h1>
+<h1>Hallo Angular</h1>
 <ul>  
     <li>{{title}}</li>
     <li>{{name}}</li>
     <li>{{summe()}}</li>
     <li>{{getSomeText}}</li>
 </ul>
+<nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/helden">Heroes</a>
+</nav>
 <techstarter-heros></techstarter-heros>
+<router-outlet></router-outlet>
+<techstarter-messages></techstarter-messages>
