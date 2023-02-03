@@ -8,19 +8,31 @@
         <input id="name" [(ngModel)] ="held.name" placeholder="name">
     </div-->
 
+<div>
+  <label for="neuer-held">Hero name: </label>
+  <input id="neuer-held" #heldName />
+    
+<!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(heldName.value); heldName.value=''">
+    Held erstellen
+  </button>
+</div>
+
 
 <ul class="held">
-    <li *ngFor="let held of helden">
-        <!--h2> {{ held.name | uppercase}}</h2-->
-        <!--p>{{held.id}}</p>
-        <p> Superkraft : {{held.superpower}}</p-->
-      <!--button [class.selected]="held === selectedHeld" type="button" (click)="onSelect(held)"-->
-        <!--span class="badge">{{hero.id}}</span>-->
-        <a routerLink="/detail/{held.id}}">
-        <span class="badge">{{held.id}</span> {{held.name}}
-        </a>
-    </li>
-  </ul>
+  <li *ngFor="let held of helden">
+    <!--h2> {{ held.name | uppercase}}</h2-->
+    <!--p>{{held.id}}</p>
+    <p> Superkraft : {{held.superpower}}</p-->
+    <!--button [class.selected]="held === selectedHeld" type="button" (click)="onSelect(held)"-->
+    <!--span class="badge">{{hero.id}}</span>-->
+    <a routerLink="/detail/{held.id}}">
+      <span class="badge">{{held.id}</span> {{held.name}}
+    </a>
+    <button type="button" class="delete" title="delete held"
+      (click)="delete(held)">x</button>
+  </li>
+</ul>
 
 
   <!--techstarter-hero-detail [held]="selectedHeld"></techstarter-hero-detail-->

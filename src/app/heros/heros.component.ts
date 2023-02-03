@@ -24,8 +24,19 @@ export class HerosComponent implements OnInit {
     .subscribe(helden => this.helden = helden);
   }
 
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.heroService.addHeld({ name } as Hero)
+      .subscribe(held => {
+        this.helden.push(held);
+      });
+  }
  
-
+  delete(held: Hero): void {
+    this.helden = this.helden.filter(h => h !== held);
+    this.heroService.deleteHeld(held.id).subscribe();
+  }
 
   //Hier die OnSelect Methode
  // onSelect(held: Hero): void {
