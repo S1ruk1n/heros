@@ -22,10 +22,11 @@ export class HeroDetailComponent implements OnInit {
     this.getHeld();
   }
   
+
   getHeld(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.heroService.getHeld(id)
-      .subscribe(held => this.held = held);
+      .subscribe(held=> this.held = held);
   }
 
   goBack(): void {
